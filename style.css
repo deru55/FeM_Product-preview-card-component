@@ -24,6 +24,7 @@ body {
   margin: 0 auto;
   background-color: hsl(0, 0%, 100%);
   border-radius: 15px;
+  max-width: 600px;
 }
 
 .product-info > * {
@@ -36,7 +37,7 @@ body {
 }
 
 .product-info {
-  padding: 1.5rem 1.5rem 0.5rem;
+  padding: 1.5rem 2rem 0.5rem;
 }
 
 .product-type {
@@ -52,7 +53,7 @@ body {
 }
 
 .product-description {
-  line-height: 1.3rem;
+  line-height: 1.5rem;
 }
 
 .product-price {
@@ -88,12 +89,19 @@ button img {
   margin-right: 0.5rem;
 }
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1024px) {
   .card-container {
     display: flex;
-    width: 800px;
+    width: 600px;
+    border-radius: 15px;
   }
   .image-product {
     content: url("images/image-product-desktop.jpg");
+    width: 50%;
+    border-radius: 15px 0 0 15px;
+  }
+
+  .product-info > * {
+    margin-bottom: 1.5rem;
   }
 }
