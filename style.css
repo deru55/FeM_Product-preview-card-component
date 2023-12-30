@@ -17,6 +17,8 @@
   --clr-neutral-1: hsl(212, 21%, 14%);
   --clr-neutral-2: hsl(228, 12%, 48%);
   --clr-neutral-3: hsl(0, 0%, 100%);
+  --fw-500: 500;
+  --fw-700: 700;
 }
 
 img {
@@ -27,6 +29,8 @@ img {
 body {
   font-size: 0.875rem; /* 14px */
   font-family: var(--font-family-default);
+  font-weight: var(--fw-500);
+  line-height: 1.7;
   background-color: var(--clr-primary-2);
   min-height: 100vh;
   display: flex;
@@ -34,7 +38,7 @@ body {
   align-items: center;
 }
 
-.card-container {
+.product-container {
   margin: 0 1rem;
   background-color: var(--clr-neutral-3);
   border-radius: 0.5rem;
@@ -42,27 +46,25 @@ body {
   max-width: 37.5rem;
 }
 
-.flex-flow {
+.product-description {
+  color: var(--clr-neutral-2);
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-.product-description {
-  color: var(--clr-neutral-2);
-  padding: 1.5rem;
-}
-
 .product-category {
   letter-spacing: 0.3rem;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
 }
 
 .product-title {
-  font-weight: 700;
+  font-weight: var(--fw-700);
   font-size: 2rem;
   font-family: var(--font-family-secundary);
   color: var(--clr-neutral-1);
+  line-height: 1;
 }
 
 .flex-group {
@@ -71,14 +73,14 @@ body {
   gap: 1rem;
 }
 
-.discount-price {
+.product-price {
   font-size: 2rem;
   font-family: var(--font-family-secundary);
-  font-weight: 700;
+  font-weight: var(--fw-700);
   color: var(--clr-primary-1);
 }
 
-.actual-price {
+.original-price {
   text-decoration: line-through;
 }
 
@@ -86,11 +88,21 @@ body {
   justify-content: center;
   background-color: var(--clr-primary-1);
   border: 0;
-  padding: 1rem;
+  padding: 0.75em 1.5em;
   border-radius: 0.5rem;
   color: var(--clr-neutral-3);
-  font-weight: 700;
+  font-weight: var(--fw-700);
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.button::before {
+  content: "";
+  background-image: url("images/icon-cart.svg");
+  width: 15px;
+  height: 16px;
 }
 
 .button:hover {
@@ -98,17 +110,12 @@ body {
 }
 
 @media screen and (min-width: 769px) {
-  .card-container {
+  .product-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
 
-  .section-img {
-    content: url("images/image-product-desktop.jpg");
-    max-width: 100%;
-  }
-
-  .flex-flow {
-    justify-content: center;
+  .product-description {
+    padding: 2rem;
   }
 }
